@@ -1,0 +1,24 @@
+name: Test PoC
+on:
+  push:
+    paths:
+      - 'poc/**'
+      - 'tests/**'
+      - '.github/workflows/test-poc.yml'
+  pull_request:
+    paths:
+      - 'poc/**'
+      - 'tests/**'
+      - '.github/workflows/test-poc.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r poc/requirements.txt
+      - run: pytest -q
