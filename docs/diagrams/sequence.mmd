@@ -1,0 +1,8 @@
+sequenceDiagram
+participant A as Club Admin A
+participant S as UniBoard Server
+participant B as Club Admin B
+A->>S: edit draft version 4
+S-->>B: broadcast accepted version 5
+B->>S: edit stale version 4
+S-->>B: conflict + latest version 5

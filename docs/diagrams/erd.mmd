@@ -1,0 +1,10 @@
+erDiagram
+USER ||--o{ MEMBERSHIP : has
+COMMUNITY ||--o{ MEMBERSHIP : contains
+USER ||--o{ POST : authors
+COMMUNITY ||--o{ POST : scopes
+POST ||--o{ COMMENT : has
+USER ||--o{ COMMENT : writes
+REPORT ||--o| MODERATION_DECISION : resolves
+COMMUNITY ||--o{ ANNOUNCEMENT_DRAFT : owns
+ANNOUNCEMENT_DRAFT ||--o{ AI_SUGGESTION : receives

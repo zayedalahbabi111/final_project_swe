@@ -1,0 +1,5 @@
+flowchart LR
+F[React Frontend] -->|HTTPS REST| B[FastAPI Backend]
+F -->|WebSocket| B
+B --> DB[(PostgreSQL)]
+B --> LLM[LLM Provider]
